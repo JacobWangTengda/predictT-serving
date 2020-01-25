@@ -26,7 +26,7 @@ This repository hosts the code for a local flask server written in python, turns
 ### Usage
 1. Run prediction_func_template.py in terminal
 2. Open [Postman](https://www.getpostman.com/downloads/) and type [http://0.0.0.0:5001](http://0.0.0.0:5001)</b> in the url field
-3. Send a post request to the above mentioned URL with the following json object, where the key is called 'file' and the value is the path to your prediction file
+3. Send a post request to the above mentioned URL with the following json object, where the key is called 'file' and the value is the relative path of your prediction file
     ```json
-    {"file": "data/file_name.csv"}
+    {"file": "../data/file_name.csv"}
     ```
