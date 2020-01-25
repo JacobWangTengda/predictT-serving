@@ -50,7 +50,7 @@ def predict():
     
     try:
         # predict results
-        historical, fitted = predict_timeseries(file, "model/model.pickle.dat")
+        historical, fitted = predict_timeseries(file, "../model/model.pickle.dat")
         message_body = _predict_message(historical,fitted)
 
         # create response message
