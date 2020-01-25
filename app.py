@@ -6,7 +6,7 @@ import json
 import pickle
 
 # import config # runs logger config, must import before app initialized
-from util import predict_timeseries
+from src.util import predict_timeseries
 app = Flask(__name__)
 # app.config.from_object(config.get_object())
 
@@ -50,7 +50,7 @@ def predict():
     
     try:
         # predict results
-        historical, fitted = predict_timeseries(file, "../model/model.pickle.dat")
+        historical, fitted = predict_timeseries(file, "model/model.pickle.dat")
         message_body = _predict_message(historical,fitted)
 
         # create response message
