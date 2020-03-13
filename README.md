@@ -28,7 +28,8 @@ This repository hosts the code for a local flask server written in python, which
 * Must be in csv format
 * Dates should be in the first column
 * Values should be in the second column
-  ##### For more reference, please check the files in the data folder
+
+<br/>Please check the files in the data folder for more details
 ### Usage
 1. Download [Docker](https://www.docker.com/products/docker-desktop) if necessary
 2. Clone the repository to your local system
