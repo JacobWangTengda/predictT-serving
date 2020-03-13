@@ -1,8 +1,7 @@
 # predictT-serving
 
-
 ### Description
-This repository hosts the code for a local flask server written in python, which turns a trained time series prediction model into a microservice. This microservice will eventually be integrated into the predictT platform and consumed by other parts of the projects.
+This repository hosts the code for a flask server written in python, which hosts a trained time series prediction model. A dockerfile is written to containerize the application so that it could be easily deployed to different computing devices as well as the major cloud providers. This server will eventually be integrated into the predictT platform and consumed by other parts of the projects.
 
 ### Folder Structure
 
@@ -31,13 +30,13 @@ This repository hosts the code for a local flask server written in python, which
 
 <br/>Please check the files in the data folder for more details
 ### Usage
-1. Download [Docker](https://www.docker.com/products/docker-desktop) if necessary
+1. Download [Docker](https://www.docker.com/products/docker-desktop) if you haven't done so
 2. Clone the repository to your local system
-3. Go to terminal and Build a docker image based on the Dockerfile included in this repository
+3. Go to terminal(MAC)/command prompt(Windows) and build a docker image based on the Dockerfile included in this repository. This is the command you need to use:
     ```bash
     sudo docker build --tag flask-docker-app .
     ```
-4. Run the docker image in terminal using the following command:
+4. Run the docker image created in the previous step using the following command:
     ```bash
     sudo docker run --name flask-docker-app -p 5001:5001 flask-docker-app
     ```
@@ -46,7 +45,9 @@ This repository hosts the code for a local flask server written in python, which
     ```json
     {"file": "data/file_name.csv"}
     ```
-    
+
+<br/> The application is also deployed to Google Cloud Platform and AWS ECR. This process is included in the main report and thus, will not be illustrated in this section.
+
 ------------------------------------------------------------------------------------------------------------------------------
 
 # STAT359 Final Report
@@ -105,7 +106,7 @@ The previous steps only run the application locally. With the increasing popular
 ##### Cloud Provider 1: Google Cloud Platform (GCP)
 GCP is nice enough to provide a comprehensive tutorial on how to deploy a containerized application, which can be found [here](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app). It is straightforward to follow and includes all the step needed including how to package a web application in a docker image, and run that container on a Google Kubernetes Engine (GKE) cluster as a load-balanced set of replicas that can scale to the needs of users. GCP also provides a cloud shell/terminal that I find to be rather user-friendly. 
 
-<br>![](https://github.com/JacobWangTengda/predictT-serving/blob/master/pics/GCP.png)
+<br/> <img src = 'https://github.com/JacobWangTengda/predictT-serving/blob/master/pics/GCP.png' width=80% height=80%>
 ##### Cloud Provider 2: AWS ECR
 I’ve been researching on the Amazon Elastic Container Service (ECR), which is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run application on a managed cluster of Amazon EC2 instances. I followed this [tutorial](https://towardsdatascience.com/how-to-deploy-a-docker-container-python-on-amazon-ecs-using-amazon-ecr-9c52922b738f) and created a containerized static webpage. Given more time, the same procedure can be replicated on the flask predicT application. 
 
