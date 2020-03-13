@@ -53,11 +53,12 @@ This repository hosts the code for a local flask server written in python, which
 
 ### Summary of Work
 Throughout the quarter, I’ve been working on the model deployment part of the project. Listed below are the individual components of my project and they will be illustrated in more detail in the next section.
--	Train prediction model and write the flask predicT application
--	Containerize the application using docker and run the container locally
--	Deploy the docker container to the cloud providers.
+-	Train prediction model
+-   Write a flask application which hosts the prediction functionality
+-	Build docker container to containerize the application and run the container locally
+-	Deploy the docker container to major cloud providers.
 
-Model deployment is usually one of the last parts of a data science lifecycle, which is also the case in this predicT project. In order to get the most value out of a machine learning model, it is important to deploy them into production so that a business can start to utilize the model and make predictions. Meanwhile, model deployment is one of the most difficult process of gaining value from machine learning as it requires knowledge from multiple fields, including data science, IT infrastructure, software engineering as well as business domain knowledge. 
+Model deployment is usually one of the last parts of a data science lifecycle, which is also the case in our predicT project. In order to get the most value out of a machine learning model, it is important to deploy them into production so that a business can start to utilize the model and make predictions. Meanwhile, model deployment is one of the most difficult process of gaining value from machine learning as it requires knowledge from multiple fields, including data science, IT infrastructure, software engineering as well as business domain knowledge. 
 
 Lack of portability used to be a huge issue where the software cannot be migrated easily from one computing environment to another. A recently developed product called docker and the concept of containerization has come into place to address this issue. As I have no prior exposure to this product and its relevant terminology, it took me quite some time to understand what it is and how it works. Intuitively at a higher level, I would like to describe each software as a parcel that needs to be carried around and the computing devices as cargo ships. Docker is then a crane which uses the containers to move the parcels across different cargo ships. It ensures that containers are safely isolated so that they can be placed properly regardless of the type of the cargo ship. 
 
@@ -110,3 +111,6 @@ I’ve been researching on the Amazon Elastic Container Service (ECR), which is 
 
 
 ### Future Insights
+In my opinion, predicT is a comprehensive end-to-end data science project of industry flavor. The concept named data pipeline has become increasingly popular in recent years. Typically, a data pipeline starts with data collection and retrieval while ends with a database for data storage or some other downstream tasks such as data visualisation. Meanwhile, it should automate the whole process of data transformation, cleansing, pre-processing as well as analysis and mining. In this case, predicT can also be viewed as a data pipeline. Although we work on different components of the project, the biweekly presentations and weekly progress updates allow us to learn and digest various areas in the field of data science.
+
+The ability to build comprehensive data pipeline is an essential skill as a data scientist. Going further, we can apply the knowledge and skills we’ve acquired throughout the course to address industry problems. For example, I once interned in a sovereign fund as a data science intern and it was truly a painful experience to deploy python projects on different servers. With the ability to write docker file to containerize the application, the deployment process would become much easier and more efficient.
