@@ -86,15 +86,19 @@ The code for the predicT flask app is modified from a sample flask file provide 
 
 #### Build and Run Docker Image
 I followed an online [tutorial](https://www.geeksforgeeks.org/dockerize-your-flask-app/) to write docker files and create docker images. A screenshot of the docker file is shown below:
-![picture](https://github.com/JacobWangTengda/predictT-serving/blob/master/pics/Dockerfile.png)
+<img src = 'https://github.com/JacobWangTengda/predictT-serving/blob/master/pics/Dockerfile.png' width=60% height=60%>
+
 <br/>This docker file will first pull python images from the docker registry and copy all the files in the application folder, where the flask code is stored. It is required to create a requirement.txt file with all the necessary packages and its version so that the docker file can ‘pip’ install all the dependencies of the application. The docker file then exposes port 5001, which the application sits on, and executes the ```python app.py``` command.
 
 After the docker file is written, you can build a docker image from this file. This docker image will create a docker container during runtime where the application is encapsulated inside. For more detail, please see the Usage section of the readme file.
 #### Make a request to the predict function
-You can make a HTTP request to the flask application once it is up and running. The input of the request is a csv file with the raw data and the output contains the predicted value. To make the POST request, you need to download Postman beforehand. Since the application is running locally and listens to port 5001, specify the host URL as ```http://0.0.0.0:5001```. The body of the request is a json object as shown in the screenshot below. The value of the entry is the path to the prediction file in the repository. Please refer to the screenshot below for more details.
+You can make a HTTP request to the flask application once it is up and running. The input of the request is a csv file with the raw data and the output contains the predicted value. To make the POST request, you need to download Postman beforehand. Since the application is running locally and listens to port 5001, specify the host URL as ```http://0.0.0.0:5001```. The body of the request is a json object as shown in the screenshot below. The value of the entry is the path to the prediction file in the repository. Please refer to the picture below for more details.
 
-<br/>![](https://github.com/JacobWangTengda/predictT-serving/blob/master/pics/postman.png)
+<br/><img src = 'https://github.com/JacobWangTengda/predictT-serving/blob/master/pics/postman.png' width=80% height=80%>
 
+<br/>This is how the response object looks like: 
+
+<br/><img src = 'https://github.com/JacobWangTengda/predictT-serving/blob/master/pics/response.png' width=80% height=80%>
 #### Deploy Docker image to the cloud
 The previous steps only run the application locally. With the increasing popularity of cloud computing, we would also like to explore the possibility to utilize the services from major cloud provides and deploy the application to the cloud. In the second half of this quarter, I’ve tried to deploy docker images to Google Cloud Platform (GCP) and the Amazon Web Services (AWS). 
 ##### Cloud Provider 1: Google Cloud Platform (GCP)
