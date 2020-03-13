@@ -106,7 +106,7 @@ The previous steps only run the application locally. With the increasing popular
 ##### Cloud Provider 1: Google Cloud Platform (GCP)
 GCP is nice enough to provide a comprehensive tutorial on how to deploy a containerized application, which can be found [here](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app). It is straightforward to follow and includes all the step needed including how to package a web application in a docker image, and run that container on a Google Kubernetes Engine (GKE) cluster as a load-balanced set of replicas that can scale to the needs of users. GCP also provides a cloud shell/terminal that I find to be rather user-friendly. 
 
-<br/> <img src = 'https://github.com/JacobWangTengda/predictT-serving/blob/master/pics/GCP.png' width=80% height=80%>
+<br/> <img src = 'https://github.com/JacobWangTengda/predictT-serving/blob/master/pics/GCP.png' width=90% height=90%>
 ##### Cloud Provider 2: AWS ECR
 I’ve been researching on the Amazon Elastic Container Service (ECR), which is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run application on a managed cluster of Amazon EC2 instances. I followed this [tutorial](https://towardsdatascience.com/how-to-deploy-a-docker-container-python-on-amazon-ecs-using-amazon-ecr-9c52922b738f) and created a containerized static webpage. Given more time, the same procedure can be replicated on the flask predicT application. 
 
